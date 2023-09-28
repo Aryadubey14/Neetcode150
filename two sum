@@ -1,0 +1,18 @@
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int first,second;
+        vector<int>result;
+        unordered_map<int,int>mp;
+        for(int i=0;i<nums.size();i++)
+        {
+            int diff=target-nums[i];
+            if(mp.find(diff)!=mp.end())
+           {auto p=mp.find(diff);
+            result.push_back(i);
+            result.push_back(mp[diff]);
+           }
+           mp[nums[i]]=i;
+        }
+        return result;
+    }
+};
